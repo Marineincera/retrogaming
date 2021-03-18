@@ -9,7 +9,9 @@ function Homepage() {
      
      <div className="homepage">
          <img src={HomepageName} className="homepage-name"/>
-         <p className="press-button-mario">Click Here</p>
+         <p className="press-button-mario">
+             <Link to="/selection">
+             Click Here</Link></p>
          <img src={HomepageMario} className="homepage-mario"/>
         
      </div>

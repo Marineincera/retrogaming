@@ -11,6 +11,8 @@ import {
   Link
 } from "react-router-dom";
 import WelcomingPage from './Main/WelcomingPage/WelcomingPage';
+import SelectionCharacterPage from './Main/SelectionCharacterPage/SelectionCharacterPage';
+
 
 function App() {
   return (
@@ -21,8 +23,8 @@ function App() {
         <Route exact path="/">
             <Homepage/>
         </Route>
-        <Route path="/welcome">
-        <WelcomingPage/>
+        <Route path="/selection">
+        <SelectionCharacterPage/>
         </Route>
       </Switch>
       </div>
