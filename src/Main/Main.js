@@ -6,6 +6,7 @@ import SelectionCharacterPage from "./SelectionCharacterSection/SelectionCharact
 import Datas from "../datas";
 import SelectionCharacterTitleSection from "../images/responsiveImages/persoSelection.jpg";
 import PseudoTitle from "../images/commonImages/pseudoTitle.png";
+import WelcomingPage from "./WelcomingPage/WelcomingPage";
 //
 class Main extends React.Component {
     constructor(props){
@@ -14,6 +15,9 @@ class Main extends React.Component {
             selectionCharacterPageOpened : false,
             selectedCharacter: null,
             name: "",
+            introductionSectionOpened : true,
+            welcomingSectionOpened : false
+
         }     
 
     }
@@ -40,6 +44,8 @@ class Main extends React.Component {
             alert("Merci d'entrer un pseudo/nom")
         }
         else{
+            this.setState(state => ({introductionSectionOpened : false}))
+            this.setState(state => ({welcomingSectionOpened : true}))
             console.log(this.state.selectedCharacter);
         }
     } 
@@ -74,12 +80,28 @@ class Main extends React.Component {
             );
     }
 
+    welcome = () => {
+        return(
+            <div className="welcoming-section">
+                <WelcomingPage></WelcomingPage>
+            </div>
+        )
+    }
+
  
 // // // RENDER
     render(){
-        return(
-            this.introduction()
-        )
+        if(this.state.introductionSectionOpened){
+            return(
+                this.introduction()
+    
+            )
+        }
+        if(this.state.welcomingSectionOpened){
+            return(
+                this.welcome()
+            )
+        }
     }
 }
 

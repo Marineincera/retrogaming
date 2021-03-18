@@ -2,7 +2,9 @@ const characters = [
     {
         id: 1,
         name: "Pikachu",
-        avatar: 'https://github.com/Marineincera/retrogaming/blob/dev/src/images/avatar/avatarPika.png?raw=true'
+        avatar: 'https://github.com/Marineincera/retrogaming/blob/dev/src/images/avatar/avatarPika.png?raw=true',
+        fullimg: 'https://github.com/Marineincera/retrogaming/blob/dev/src/images/avatar/pika.png?raw=true'
+
     },
     {
         id: 2,
