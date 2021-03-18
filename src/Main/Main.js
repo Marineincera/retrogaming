@@ -1,11 +1,12 @@
 import React from "react";
 import "./main.css";
 import Homepage from "./Homepage/Homepage";
-//Selection Character
+//Character Selection 
 import SelectionCharacterPage from "./SelectionCharacterSection/SelectionCharacterSection";
 import Datas from "../datas";
 import SelectionCharacterTitleSection from "../images/responsiveImages/persoSelection.jpg";
 import PseudoTitle from "../images/commonImages/pseudoTitle.png";
+//
 class Main extends React.Component {
     constructor(props){
         super(props)
@@ -22,7 +23,7 @@ class Main extends React.Component {
         this.setState(state => ({ selectionCharacterPageOpened: !state.selectionCharacterPageOpened}))
 
     }
-// Form Page / Selection of a character 
+// Form Page / Character Selection
     chooseACharacter = (character) => {
         this.setState(state => ({ selectedCharacter: character}));   
     }
@@ -32,12 +33,19 @@ class Main extends React.Component {
     }
 
     formValidation = () => {
-        console.log(this.state.name);
-        console.log(this.state.selectedCharacter);
+        if(this.state.selectedCharacter === null){
+            alert("Merci de choisir un personnage")
+        }
+        if(this.state.name === ""){
+            alert("Merci d'entrer un pseudo/nom")
+        }
+        else{
+            console.log(this.state.selectedCharacter);
+        }
     } 
 
 // // SCREENS 
-//Homepage and character selection page
+//Homepage and Character Selection page
     introduction = () => {
         return (
             <div className="introduction-section">
@@ -66,6 +74,7 @@ class Main extends React.Component {
             );
     }
 
+ 
 // // // RENDER
     render(){
         return(
