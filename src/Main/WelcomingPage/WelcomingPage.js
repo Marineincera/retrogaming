@@ -3,7 +3,7 @@ import "./welcomingPage.css";
 import Typed from 'typed.js';
 import { withRouter } from 'react-router-dom';
 import Datas from '../../datas';
-
+import SelectedCharacterComponent from '../commonComponent/SelectedCharacterComponent/SelectedCharacterComponent';
 class WelcomingPage extends React.Component {
     constructor(props){
         super(props)
@@ -31,7 +31,7 @@ class WelcomingPage extends React.Component {
                 <div className="welcoming-text-wrapper">
                     <p id="welcomingTextFirstSetion" className="welcoming-text"></p>
                 </div>
-                <img src={this.selectedCharacter.fullimg} className="fullsize-character" />
+                <SelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
             </div>
         )      
         
