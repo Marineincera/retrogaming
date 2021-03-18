@@ -6,4 +6,44 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.fullsize-character{
+    width: 100px;
+    height: 100px;
+    align-self: center;
+    animation-name: fallingCharacter;
+    animation-duration: 5s;
+    position: absolute;
+    animation-fill-mode: forwards;
+  
+ 
+}
+
+@keyframes fallingCharacter {
+    0% {margin-top: -10vh;}
+    100% {
+        margin-top: 68vh;
+    }
+}
+
+.welcoming-text-wrapper{
+    height: 20vh;
+    width: 80vw;
+    color: white;
+    font-family: SuperMario, sans-serif;
+    border: 3px solid white; 
+   align-self: center;
+   display: flex;
+   justify-content: center;
+   margin-top: 25vh;
+}
+
+.welcoming-text{
+    justify-self: center;
 }
