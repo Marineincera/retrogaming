@@ -15,6 +15,7 @@ class SelectionCharacterPage extends React.Component {
         name: "",
         completed : false
     }}
+    to = ""
 
 
     chooseACharacter = (character) => {
@@ -33,6 +34,8 @@ class SelectionCharacterPage extends React.Component {
             alert("Merci d'entrer un pseudo/nom")
         }
         else{
+            let str1 = "welcome"
+            this.to = str1.concat('/',this.state.selectedCharacter.id,'/', this.state.name)
             this.setState(state => ({ completed: true}));  
         }
     } 
@@ -55,8 +58,9 @@ class SelectionCharacterPage extends React.Component {
             )
         }
         else
+       
         {    
-            return <Redirect to='/welcome' />
+            return <Redirect to={this.to} />
         }
     }
 }

@@ -26,7 +26,7 @@ function App() {
         <Route path="/selection">
         <SelectionCharacterPage/>
         </Route>
-        <Route path="/welcome">
+        <Route path="/welcome/:persoid/:pseudo">
         <WelcomingPage/>
         </Route>
       </Switch>
