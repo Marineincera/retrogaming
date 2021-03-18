@@ -1,15 +1,18 @@
 import React from "react";
+import "./main.css";
 import Homepage from "./Homepage/Homepage";
+//Selection Character
 import SelectionCharacterPage from "./SelectionCharacterSection/SelectionCharacterSection";
 import Datas from "../datas";
+import SelectionCharacterTitleSection from "../images/responsiveImages/persoSelection.jpg";
+import PseudoTitle from "../images/commonImages/pseudoTitle.png";
 class Main extends React.Component {
     constructor(props){
         super(props)
         this.state = {
             selectionCharacterPageOpened : false,
             selectedCharacter: null,
-            name: ""
-            
+            name: "",
         }     
 
     }
@@ -21,7 +24,7 @@ class Main extends React.Component {
     }
 // Form Page / Selection of a character 
     chooseACharacter = (character) => {
-        this.setState(state => ({ selectedCharacter: character}));
+        this.setState(state => ({ selectedCharacter: character}));   
     }
 
     nameOnChange = (e) => {
@@ -43,14 +46,18 @@ class Main extends React.Component {
                 <Homepage ></Homepage>
             </div>
             : 
-            <div className="selectionCharacter">
-                {Datas.map((character) => (
-                    <div  key={character.id}  onClick={() => this.chooseACharacter(character)} >
-                        < SelectionCharacterPage character={character}></SelectionCharacterPage>
-                    </div>
-                ))}
-                 <input type="text" onChange={this.nameOnChange}></input>
-                <p className="press-button-mario" onClick={() => this.formValidation()}>Valider</p>
+            <div className="selection-character-section">
+                <img src={SelectionCharacterTitleSection} className="character-section-title" />
+                <div className="character-list">
+                    {Datas.map((character) => (
+                        <div  key={character.id}  onClick={() => this.chooseACharacter(character)} >
+                            < SelectionCharacterPage selectedCharacter={this.state.selectedCharacter} character={character}></SelectionCharacterPage>
+                        </div>
+                    ))}
+                </div>
+                <img src={PseudoTitle} className="character-section-title" />
+                <input type="text" onChange={this.nameOnChange} className="name-input"></input>
+                <p className="press-button-mario form-button" onClick={() => this.formValidation()}>Valider</p>
             </div>
             }
         </div>

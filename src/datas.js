@@ -28,6 +28,21 @@ const characters = [
         id: 6,
         name: "Yoshi",
         avatar: "https://github.com/Marineincera/retrogaming/blob/dev/src/images/avatar/avatarYoshi.png?raw=true"
+    },
+    {
+        id: 7,
+        name: "Kenny",
+        avatar: "https://github.com/Marineincera/retrogaming/blob/dev/src/images/avatar/avatarKenny.png?raw=true"
+    },
+    {
+        id: 8,
+        name: "Salah",
+        avatar: "https://github.com/Marineincera/retrogaming/blob/dev/src/images/avatar/avatarSalah.png?raw=true"
+    },
+    {
+        id: 9,
+        name: "Tristesse",
+        avatar: "https://github.com/Marineincera/retrogaming/blob/dev/src/images/avatar/avatarTristesse.png?raw=true"
     }
 ]
 
