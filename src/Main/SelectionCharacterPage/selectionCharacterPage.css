@@ -2,7 +2,7 @@
 .selection-character-section{
     height: 100%;
     width: 99vw;
-    background-image: url('../images/commonImages/background.jpg');
+    background-image: url('../../images/commonImages/background.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -42,4 +42,3 @@
     text-align: center;
     font-size: 5vh;
 }
-
