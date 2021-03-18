@@ -9,7 +9,6 @@ class WelcomingPage extends React.Component {
         super(props)
         this.selectedCharacter= {}
     }
-      
 
     componentDidMount(){
         this.typed = new Typed('#welcomingTextFirstSetion', {
@@ -21,23 +20,22 @@ class WelcomingPage extends React.Component {
                 "Clique ici pour commencer"
             ], 
             typeSpeed: 50
-          });
+        });
     }
     
     render(){    
         let params = this.props.match.params
         this.selectedCharacter = Datas.find(character => character.id == this.props.match.params.persoid);
-            return (
-                <div className="welcoming-page">
-                     <div className="welcoming-text-wrapper">
-                     <p id="welcomingTextFirstSetion" className="welcoming-text"></p>
-                    </div>
-                        <img src={this.selectedCharacter.fullimg} className="fullsize-character" />
-                    </div>
-            )      
+        return (
+            <div className="welcoming-page">
+                <div className="welcoming-text-wrapper">
+                    <p id="welcomingTextFirstSetion" className="welcoming-text"></p>
+                </div>
+                <img src={this.selectedCharacter.fullimg} className="fullsize-character" />
+            </div>
+        )      
         
     }
 }
-    
     
 export default withRouter(WelcomingPage)

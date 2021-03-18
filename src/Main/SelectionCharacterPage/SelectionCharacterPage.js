@@ -6,7 +6,6 @@ import PseudoTitle from "../../images/commonImages/pseudoTitle.png";
 import SelectionCharacterSection from "../SelectionCharacterSection/SelectionCharacterSection";
 import {  Redirect   } from "react-router-dom";
 
-
 class SelectionCharacterPage extends React.Component {
     constructor(props){
       super(props)
@@ -16,7 +15,6 @@ class SelectionCharacterPage extends React.Component {
         completed : false
     }}
     to = ""
-
 
     chooseACharacter = (character) => {
         this.setState(state => ({ selectedCharacter: character}));   
@@ -39,6 +37,7 @@ class SelectionCharacterPage extends React.Component {
             this.setState(state => ({ completed: true}));  
         }
     } 
+
     render(){
         if(!this.state.completed){
             return(
@@ -58,7 +57,6 @@ class SelectionCharacterPage extends React.Component {
             )
         }
         else
-       
         {    
             return <Redirect to={this.to} />
         }
