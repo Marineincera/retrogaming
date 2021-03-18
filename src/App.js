@@ -26,6 +26,9 @@ function App() {
         <Route path="/selection">
         <SelectionCharacterPage/>
         </Route>
+        <Route path="/welcome">
+        <WelcomingPage/>
+        </Route>
       </Switch>
       </div>
     </Router>
