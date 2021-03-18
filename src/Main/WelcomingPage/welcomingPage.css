@@ -1,0 +1,9 @@
+.welcoming-page{
+    height: 100vh;
+    width: 100vw;
+    /* */
+    background-image: url("../../images/commonImages/backgroundMarioTotallyEmpty.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
