@@ -83,7 +83,7 @@ class Main extends React.Component {
     welcome = () => {
         return(
             <div className="welcoming-section">
-                <WelcomingPage></WelcomingPage>
+                <WelcomingPage selectedCharacter={this.state.selectedCharacter} name={this.state.name}></WelcomingPage>
             </div>
         )
     }
