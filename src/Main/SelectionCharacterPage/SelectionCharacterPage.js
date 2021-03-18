@@ -3,8 +3,8 @@ import Datas from "../../datas";
 import './selectionCharacterPage.css';
 import SelectionCharacterTitleSection from "../../images/responsiveImages/persoSelection.jpg";
 import PseudoTitle from "../../images/commonImages/pseudoTitle.png";
-import SelectionCharacterSection from "../SelectionCharacterSection/SelectionCharacterSection";
 import {  Redirect   } from "react-router-dom";
+import SelectionCharacterSection from "./SelectionCharacterSection/SelectionCharacterSection";
 
 class SelectionCharacterPage extends React.Component {
     constructor(props){
@@ -46,7 +46,7 @@ class SelectionCharacterPage extends React.Component {
                     <div className="character-list">
                         {Datas.map((character) => (
                             <div  key={character.id}  onClick={() => this.chooseACharacter(character)} >
-                                < SelectionCharacterSection selectedCharacter={this.state.selectedCharacter} character={character}/>
+                                <SelectionCharacterSection selectedCharacter={this.state.selectedCharacter} character={character}/>
                             </div>
                         ))}
                     </div>
