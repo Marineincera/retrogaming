@@ -12,11 +12,16 @@ class ResumePage extends React.Component {
             menuTitles :["Presentation", "Experience Pro", "Formation", "+", "Contact"]
         }
         this.selectedCharacter= {}
-        
     }
 
+    openMenuSection(title){
+        console.log(title);
+    }
     
     render(){
+        window.addEventListener('keydown', (event) => {
+            alert('rr')
+          });
         let params = this.props.match.params
         this.selectedCharacter = Datas.find(character => character.id == this.props.match.params.persoid);
         return(
@@ -24,8 +29,9 @@ class ResumePage extends React.Component {
                <div className="menu-container">
                {this.state.menuTitles.map((title) => {
                         return (
-                            <div key={title} className="menu-title">
-                                <p>{title}</p>
+                            <div key={title} className="menu-title-case" onClick={() =>this.openMenuSection(title)}>
+                                <p className="menu-arrow">---</p>
+                                <p className="menu-title">{title}</p>
                             </div>
                         )
                     })}
