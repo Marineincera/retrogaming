@@ -4,37 +4,84 @@ import { withRouter } from "react-router";
 import "./resumePage.css";
 import Datas from '../../datas';
 import SmallSelectedCharacterComponent from "../commonComponent/SmallSelectedCharacterComponent/SmallSelectedCharacterComponent";
+import MenuTitleComponent from "../commonComponent/MenuComponent/MenuTitleComponent/MenuTitleComponent";
 
 class ResumePage extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            menuTitles :["Presentation", "Experience Pro", "Formation", "+", "Contact"]
+            menuTitles :[{title:"Presentation", num:1}, {title:"Experience Pro",num:2}, {title:"Formation",num:3}, {title:"+",num:4}, {title:"Contact",num:5}],
+            selectedSectionMenu : 0
         }
-        this.selectedCharacter= {}
+        this.selectedCharacter= {}    
     }
 
-    openMenuSection(title){
-        console.log(title);
+// interaction
+    selectionSection(event){
+        if(event.keyCode === 40){
+           this.goDown()
+        }
+        if(event.keyCode === 38){
+            this.goUp();
+        }
+        if(event.keyCode === 13){
+           this.openMenuSection()
+        }
     }
-    
+
+    goDown(){
+        if(this.state.selectedSectionMenu == 5){
+            this.setState(state => ({ selectedSectionMenu : 1}))
+           
+        } else {
+           const newNum = this.state.selectedSectionMenu + 1;
+           this.setState(state => ({ selectedSectionMenu : newNum}))
+        }
+    }
+
+    goUp(){
+        if(this.state.selectedSectionMenu == 1){
+            this.setState(state => ({ selectedSectionMenu : 5}))
+           
+        } else {
+           const newNum = this.state.selectedSectionMenu - 1;
+           this.setState(state => ({ selectedSectionMenu : newNum}))
+        }
+    }
+///
+    displayTitle(selectedNum){
+        return ( 
+            this.state.menuTitles.map((title) => {
+                return (
+                    <MenuTitleComponent key={title.num} title={title} selectedTitle={selectedNum} />
+                 )
+            })
+        )
+    }
+
+
+    openMenuSection(title){
+      
+    }
+
+
+    componentDidMount(){
+        const el = document.querySelector('#resume')
+        window.addEventListener('keydown',(event) => {
+            this.selectionSection(event)
+        });
+        this.render()
+
+    }
+
     render(){
-        window.addEventListener('keydown', (event) => {
-            alert('rr')
-          });
+        console.log(this.state.selectedSectionMenu);
         let params = this.props.match.params
         this.selectedCharacter = Datas.find(character => character.id == this.props.match.params.persoid);
         return(
-           <div className="resume-page">
+           <div className="resume-page" id="resume">
                <div className="menu-container">
-               {this.state.menuTitles.map((title) => {
-                        return (
-                            <div key={title} className="menu-title-case" onClick={() =>this.openMenuSection(title)}>
-                                <p className="menu-arrow">---</p>
-                                <p className="menu-title">{title}</p>
-                            </div>
-                        )
-                    })}
+                {this.displayTitle(this.state.selectedSectionMenu)}
                </div>
                <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
             </div>
