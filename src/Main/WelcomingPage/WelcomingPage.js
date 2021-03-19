@@ -23,11 +23,17 @@ class WelcomingPage extends React.Component {
         });
     }
     
+    openResumeDetails = () => {
+
+        alert('yeah')
+    }
+
+
     render(){    
         let params = this.props.match.params
         this.selectedCharacter = Datas.find(character => character.id == this.props.match.params.persoid);
         return (
-            <div className="welcoming-page">
+            <div className="welcoming-page" onClick={this.openResumeDetails}>
                 <div className="welcoming-text-wrapper">
                     <p id="welcomingTextFirstSetion" className="welcoming-text"></p>
                 </div>
