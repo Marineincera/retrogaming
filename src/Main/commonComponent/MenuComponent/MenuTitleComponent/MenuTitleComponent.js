@@ -7,10 +7,15 @@ class MenuTitleComponent extends React.Component {
         super(props)
     }
 
+
+    openMenuSection(title){
+        // console.log(title);
+    }
+
     render(){
         if(this.props.title.num == this.props.selectedTitle){
             return (
-                <div  className="menu-title-case">
+                <div  className="menu-title-case" onClick={()=> this.openMenuSection(this.props.title.title)}>
                 <p className="menu-arrow">---</p>
                 <p className="menu-title-selected">{this.props.title.title}</p>
             </div>
@@ -18,7 +23,7 @@ class MenuTitleComponent extends React.Component {
        }else {
             return (
             
-                <div  className="menu-title-case">
+                <div  className="menu-title-case"  onClick={()=> this.openMenuSection(this.props.title.title)} >
                     <p className="menu-arrow">---</p>
                     <p className="menu-title">{this.props.title.title}</p>
                 </div>

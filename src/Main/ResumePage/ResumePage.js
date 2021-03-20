@@ -5,18 +5,20 @@ import "./resumePage.css";
 import Datas from '../../datas';
 import SmallSelectedCharacterComponent from "../commonComponent/SmallSelectedCharacterComponent/SmallSelectedCharacterComponent";
 import MenuTitleComponent from "../commonComponent/MenuComponent/MenuTitleComponent/MenuTitleComponent";
+import PresentationComponent from "../commonComponent/MenuComponent/PresentationComponent/PresentationComponent";
 
 class ResumePage extends React.Component {
     constructor(props){
         super(props)
         this.state = {
             menuTitles :[{title:"Presentation", num:1}, {title:"Experience Pro",num:2}, {title:"Formation",num:3}, {title:"+",num:4}, {title:"Contact",num:5}],
-            selectedSectionMenu : 0
+            selectedSectionMenu : 0,
+            menu : true
         }
         this.selectedCharacter= {}    
     }
 
-// interaction
+// interactive Menu
     selectionSection(event){
         if(event.keyCode === 40){
            this.goDown()
@@ -51,19 +53,22 @@ class ResumePage extends React.Component {
 ///
     displayTitle(selectedNum){
         return ( 
-            this.state.menuTitles.map((title) => {
+            <div >
+            {this.state.menuTitles.map((title) => {
                 return (
+                    <div onClick={()=>this.openMenuSection(title)}>
                     <MenuTitleComponent key={title.num} title={title} selectedTitle={selectedNum} />
+                    </div>
                  )
-            })
+            })}
+            </div>
         )
     }
 
-
     openMenuSection(title){
-      
+        this.setState(state => ({ menu : false}))
+        console.log(title);
     }
-
 
     componentDidMount(){
         const el = document.querySelector('#resume')
@@ -71,7 +76,6 @@ class ResumePage extends React.Component {
             this.selectionSection(event)
         });
         this.render()
-
     }
 
     render(){
@@ -81,13 +85,12 @@ class ResumePage extends React.Component {
         return(
            <div className="resume-page" id="resume">
                <div className="menu-container">
-                {this.displayTitle(this.state.selectedSectionMenu)}
+                   {this.state.menu ? this.displayTitle(this.state.selectedSectionMenu) : <PresentationComponent/>}          
                </div>
                <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
             </div>
         )
-    }
-        
+    }    
 }
 
 export default withRouter(ResumePage)

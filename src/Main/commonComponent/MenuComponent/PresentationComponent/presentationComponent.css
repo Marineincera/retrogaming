@@ -1,0 +1,62 @@
+.presentation-container{
+    display: grid;
+    grid-template-areas: 
+        ". name ."
+        ". age ."
+        ". location ."
+        ". fondamentals ."
+        ". personnalskills ." ;
+        overflow: overlay;
+        height: 60vh;
+        width: 100%;
+}
+
+
+.presentation-name{
+    grid-area: name;
+    justify-self: center;
+}
+
+.presentation-age{
+    grid-area: age;
+    justify-self: center;
+}
+
+.presentation-location{
+    grid-area: location;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    justify-self: center;
+}
+
+.presentation-fondamentals{
+    grid-area: fondamentals;
+    margin: 2vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.presentation-personnalskills{
+    grid-area: personnalskills;
+    justify-self: end;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-self: end;
+}
+
+
+.presentation-text{
+    font-family: SuperMario, sans-serif;
+    color: white;
+    font-size: 4vh;
+}
+
+.presentation-title{
+    font-size: 3vh;
+   
+}
