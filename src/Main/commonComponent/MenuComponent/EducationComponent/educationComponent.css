@@ -1,0 +1,30 @@
+.education-container{
+    display: grid;
+    overflow: overlay;
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.education-case{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.education-title{
+    font-family: SuperMario, sans-serif;
+    font-size: 3vh;
+}
+
+.education-subtitle{
+    font-family: SuperMario, sans-serif;
+    font-size: 3vh;
+    margin: 1vh;
+}
+
+.education-text{
+    margin: 1vh;
+}

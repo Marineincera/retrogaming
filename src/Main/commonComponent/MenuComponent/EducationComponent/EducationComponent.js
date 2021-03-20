@@ -1,4 +1,5 @@
 import React from "react";
+import './educationComponent.css';
 import Education from '../../../../ResumeDatas/educationDatas'
 
 class EducationComponent extends React.Component {
@@ -14,12 +15,12 @@ class EducationComponent extends React.Component {
         <div className="education-container">
             {this.educationArray.map(education => { 
                 return(
-                    <div className="education-case">
-                        <h2>{education.title}</h2>
-                        <h2>{education.level}</h2>
-                        <p>{education.school}</p>
-                        <p>{education.date}</p>
-                        <p>{education.description}</p>
+                    <div key={education.title} className="education-case">
+                        <h2 className="education-title" >{education.title}</h2>
+                        <h2 className="education-subtitle">{education.level}</h2>
+                        <p className="education-text">{education.school}</p>
+                        <p className="education-text">{education.date}</p>
+                        <p className="education-text">{education.description}</p>
                     </div>    
                 )
             })

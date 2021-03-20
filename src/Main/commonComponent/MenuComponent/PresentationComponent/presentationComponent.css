@@ -6,9 +6,9 @@
         ". location ."
         ". fondamentals ."
         ". personnalskills ." ;
-        overflow: overlay;
-        height: 60vh;
-        width: 100%;
+    overflow: overlay;
+    height: 60vh;
+    width: 100%;
 }
 
 

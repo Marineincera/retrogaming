@@ -58,8 +58,8 @@ class ResumePage extends React.Component {
             <div >
             {this.state.menuTitles.map((title) => {
                 return (
-                    <div onClick={()=>this.openMenuSection(title)}>
-                    <MenuTitleComponent key={title.num} title={title} selectedTitle={selectedNum} />
+                    <div key={title.num}  onClick={()=>this.openMenuSection(title)}>
+                    <MenuTitleComponent  title={title} selectedTitle={selectedNum} />
                     </div>
                  )
             })}
@@ -83,7 +83,6 @@ class ResumePage extends React.Component {
 //
 
     render(){
-        console.log(this.state.selectedSectionMenu);
         let params = this.props.match.params
         this.selectedCharacter = Datas.find(character => character.id == this.props.match.params.persoid);
         switch (this.state.selectedTitle) {
