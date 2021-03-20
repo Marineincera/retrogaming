@@ -6,6 +6,7 @@ import Datas from '../../datas';
 import SmallSelectedCharacterComponent from "../commonComponent/SmallSelectedCharacterComponent/SmallSelectedCharacterComponent";
 import MenuTitleComponent from "../commonComponent/MenuComponent/MenuTitleComponent/MenuTitleComponent";
 import PresentationComponent from "../commonComponent/MenuComponent/PresentationComponent/PresentationComponent";
+import EducationComponent from "../commonComponent/MenuComponent/EducationComponent/EducationComponent";
 
 class ResumePage extends React.Component {
     constructor(props){
@@ -13,7 +14,8 @@ class ResumePage extends React.Component {
         this.state = {
             menuTitles :[{title:"Presentation", num:1}, {title:"Experience Pro",num:2}, {title:"Formation",num:3}, {title:"+",num:4}, {title:"Contact",num:5}],
             selectedSectionMenu : 0,
-            menu : true
+            menu : true,
+            titleSelected : " "
         }
         this.selectedCharacter= {}    
     }
@@ -67,9 +69,10 @@ class ResumePage extends React.Component {
 
     openMenuSection(title){
         this.setState(state => ({ menu : false}))
-        console.log(title);
+        this.setState(state => ({ selectedTitle : title.title}))
     }
 
+// KeyPress Detection 
     componentDidMount(){
         const el = document.querySelector('#resume')
         window.addEventListener('keydown',(event) => {
@@ -77,19 +80,44 @@ class ResumePage extends React.Component {
         });
         this.render()
     }
+//
 
     render(){
         console.log(this.state.selectedSectionMenu);
         let params = this.props.match.params
         this.selectedCharacter = Datas.find(character => character.id == this.props.match.params.persoid);
-        return(
-           <div className="resume-page" id="resume">
-               <div className="menu-container">
-                   {this.state.menu ? this.displayTitle(this.state.selectedSectionMenu) : <PresentationComponent/>}          
-               </div>
-               <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
-            </div>
-        )
+        switch (this.state.selectedTitle) {
+            case "Presentation":
+                return ( 
+                    <div className="resume-page" id="resume">
+                        <div className="menu-container">
+                            <PresentationComponent/>
+                        </div>
+                        <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
+                    </div>
+                )
+                break;
+            case "Formation":
+                return(
+                    <div className="resume-page" id="resume">
+                        <div className="menu-container">
+                            <EducationComponent/>
+                        </div>
+                        <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
+                    </div>
+                )
+                break;
+            default:
+                return (
+                    <div className="resume-page" id="resume">
+                        <div className="menu-container">
+                            {this.displayTitle(this.state.selectedSectionMenu)}
+                        </div>
+                        <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
+                    </div>
+                )
+                break;
+        }
     }    
 }
 
