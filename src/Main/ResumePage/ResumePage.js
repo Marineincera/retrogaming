@@ -7,12 +7,13 @@ import SmallSelectedCharacterComponent from "../commonComponent/SmallSelectedCha
 import MenuTitleComponent from "../commonComponent/MenuComponent/MenuTitleComponent/MenuTitleComponent";
 import PresentationComponent from "../commonComponent/MenuComponent/PresentationComponent/PresentationComponent";
 import EducationComponent from "../commonComponent/MenuComponent/EducationComponent/EducationComponent";
+import ProfessionnalComponent from "../commonComponent/MenuComponent/ProfessionnalComponent/ProfessionnalComponent";
 
 class ResumePage extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            menuTitles :[{title:"Presentation", num:1}, {title:"Experience Pro",num:2}, {title:"Formation",num:3}, {title:"+",num:4}, {title:"Contact",num:5}],
+            menuTitles :[{title:"Presentation", num:1}, {title:"Professionnal",num:2}, {title:"Formation",num:3}, {title:"+",num:4}, {title:"Contact",num:5}],
             selectedSectionMenu : 0,
             menu : true,
             titleSelected : " "
@@ -106,6 +107,16 @@ class ResumePage extends React.Component {
                     </div>
                 )
                 break;
+                case "Professionnal":
+                    return(
+                        <div className="resume-page" id="resume">
+                            <div className="menu-container">
+                                <ProfessionnalComponent/>
+                            </div>
+                            <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
+                        </div>
+                    )
+                    break;
             default:
                 return (
                     <div className="resume-page" id="resume">
