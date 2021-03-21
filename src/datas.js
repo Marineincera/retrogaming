@@ -3,7 +3,11 @@ const characters = [
         id: 1,
         name: "Pikachu",
         avatar: 'https://github.com/Marineincera/retrogaming/blob/dev/src/images/avatar/avatarPika.png?raw=true',
-        fullimg: 'https://github.com/Marineincera/retrogaming/blob/dev/src/images/characters/pika.png?raw=true'
+        fullimg: 'https://github.com/Marineincera/retrogaming/blob/dev/src/images/characters/pika.png?raw=true',
+        toCatch: "les sucettes",
+        catchImg:"",
+        toAvoid: "les pokeballs",
+        avoidImg: " "
 
     },
     {
