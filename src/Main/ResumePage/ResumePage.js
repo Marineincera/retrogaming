@@ -18,7 +18,7 @@ class ResumePage extends React.Component {
             menuTitles :[{title:"Presentation", num:1}, {title:"Professionnal",num:2}, {title:"Formation",num:3}, {title:"Compétences",num:4}, {title:"Contact",num:5}],
             selectedSectionMenu : 0,
             menu : true,
-            titleSelected : " "
+            selectedTitle : " "
         }
         this.selectedCharacter= {}    
     }
@@ -32,7 +32,9 @@ class ResumePage extends React.Component {
             this.goUp();
         }
         if(event.keyCode === 13){
-           this.openMenuSection()
+            const sectionToOpen = this.state.menuTitles.find(element => element.num == this.state.selectedSectionMenu);
+            this.setState(state => ({ selectedTitle : sectionToOpen.title}))
+
         }
     }
 

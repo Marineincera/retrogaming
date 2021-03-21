@@ -1,6 +1,6 @@
 import React from "react";
 import "./menuTitleComponent.css";
-
+import {FaArrowCircleRight} from "react-icons/fa";
 
 class MenuTitleComponent extends React.Component {
     constructor(props){
@@ -9,14 +9,14 @@ class MenuTitleComponent extends React.Component {
 
 
     openMenuSection(title){
-        // console.log(title);
+
     }
 
     render(){
         if(this.props.title.num == this.props.selectedTitle){
             return (
                 <div  className="menu-title-case" onClick={()=> this.openMenuSection(this.props.title.title)}>
-                <p className="menu-arrow">---</p>
+                <p className="menu-arrow"><FaArrowCircleRight/></p>
                 <p className="menu-title-selected">{this.props.title.title}</p>
             </div>
             )
@@ -24,7 +24,7 @@ class MenuTitleComponent extends React.Component {
             return (
             
                 <div  className="menu-title-case"  onClick={()=> this.openMenuSection(this.props.title.title)} >
-                    <p className="menu-arrow">---</p>
+                    {/* <p className="menu-arrow"><FaArrowCircleRight/></p> */}
                     <p className="menu-title">{this.props.title.title}</p>
                 </div>
             )}

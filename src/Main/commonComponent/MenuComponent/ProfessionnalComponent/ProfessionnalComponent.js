@@ -15,7 +15,7 @@ class ProfessionnalComponent extends React.Component {
         <div className="professionnal-container">
             {this.professionnalArray.map(professionnal => { 
                 return(
-                    <div key={professionnal.title} className="professionnal-case">
+                    <div key={professionnal.description} className="professionnal-case">
                         <h2 className="professionnal-title" >{professionnal.workTitle}</h2>
                         <p className="professionnal-subtitle">{professionnal.company}</p>
                         <p className="professionnal-text">{professionnal.statut}</p>
