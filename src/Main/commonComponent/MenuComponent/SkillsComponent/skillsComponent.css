@@ -1,0 +1,23 @@
+.skills-container{
+    display: grid;
+    overflow: overlay;
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.skills-case{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.skills-title{
+    font-family: SuperMario, sans-serif;
+    font-size: 3vh;
+}
+
+.skills-text{
+    margin: 0.5vh;
+}

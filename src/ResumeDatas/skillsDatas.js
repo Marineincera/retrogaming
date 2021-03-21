@@ -9,8 +9,8 @@ const skills = [
                 "Conception de Wireframes",
                 "Gestion du versionning Git - Github/GitLab",
                 "Création de vidéos (tournage et montage)",
-                "Choisir les outils web au service de la mise en oeuvre de la stratégie commerciale",
-                "Réalisation d'audits de sites internet (Qualité Tourisme™)"
+               
+          
             ]
     },
     {
@@ -18,7 +18,6 @@ const skills = [
         "skillsList": [
                 "Veille Marketing",
                 "Élaboration et mise en œuvre d’une politique commerciale",
-                "Diagnostic d’un territoire/ marché",
                 "Conception, gestion et contrôle de l’avancement d’un projet",
                 "Analyse et reporting des actions",
                 "Diagnostic d’un territoire/ d’un marché",
@@ -40,7 +39,7 @@ const skills = [
             "Accueil d'une clientèle française et internationale",
             "Gestion d'une caisse",
             "Répondre aux besoins d'une clientèle",
-            "Utilistion de logiciels de réservation"
+            "Utilisation de logiciels de réservation"
             ]
     },
     {
@@ -49,112 +48,135 @@ const skills = [
             {
                 "name" : "HTML/CSS",
                 "level" : "3",
-                "section": "Web Development"
+                "section": "Web Development",
+                "id" : "1"
             },
             {
                 "name" : "FlexBox",
                 "level" : "3",
-                "section": "Web Development"
-            },
-            {
-                "name" : "Word",
-                "level" : "3",
-                "section": "Tools"
-            },
-            {
-                "name" : "Excel",
-                "level" : "3",
-                "section": "Tools"
-            },
-            {
-                "name" : "Powerpoint",
-                "level" : "3",
-                "section": "Tools"
-            },
-            {
-                "name" : "Slack",
-                "level" : "3",
-                "section": "Tools"
+                "section": "Web Development",
+                "id" : "2"
             },
             {
                 "name" : "JavaScript",
                 "level" : "2",
-                "section": "Web Development"
+                "section": "Web Development",
+                "id" : "7"
             },
             {
                 "name" : "TypeScript",
                 "level" : "2",
-                "section": "Web Development"
+                "section": "Web Development",
+                "id" : "8"
             },
             {
                 "name" : "Github",
                 "level" : "2",
-                "section": "Web Development"
+                "section": "Web Development",
+                "id" : "9"
             },
             {
                 "name" : "Angular 9+",
                 "level" : "2",
-                "section": "Web Development"
+                "section": "Web Development",
+                "id" : "10"
             },
             {
                 "name" : "TypeORM",
                 "level" : "2",
-                "section": "Web Development"
-            },
-            {
-                "name" : "Trello",
-                "level" : "2",
-                "section": "Tools"
+                "section": "Web Development",
+                "id" : "11"
             },
             {
                 "name" : "React Native",
                 "level" : "1" ,
-                "section" : "Web Development"
+                "section" : "Web Development",
+                "id" : "13"
             },
             {
                 "name" : "React Js",
                 "level" : "1",
-                "section" : "Web Development"
+                "section" : "Web Development",
+                "id" : "14"
             },
             {
                 "name" : "CSS Grid",
                 "level" : "1",
-                "section": "Web Development"
+                "section": "Web Development",
+                "id" : "15"
             },
             {
                 "name" : "GitLab",
                 "level" : "1",
-                "section": "Web Development"
+                "section": "Web Development",
+                "id" : "16"
             },
             {
                 "name" : "Wordpress",
                 "level" : "1",
-                "section": "Web Development"
+                "section": "Web Development",
+                "id" : "17"
             },
             {
                 "name" : "SQL",
                 "level" : "1",
-                "section": "Web Development"
+                "section": "Web Development",
+                "id" : "18"
             },
             {
                 "name" : "Zapier",
                 "level" : "1",
-                "section": "Web Development"
+                "section": "Web Development",
+                "id" : "19"
+            },
+            {
+                "name" : "Word",
+                "level" : "3",
+                "section": "Tools",
+                "id" : "3"
+            },
+            {
+                "name" : "Excel",
+                "level" : "3",
+                "section": "Tools",
+                "id" : "4"
+            },
+            {
+                "name" : "Powerpoint",
+                "level" : "3",
+                "section": "Tools",
+                "id" : "5"
+            },
+            {
+                "name" : "Slack",
+                "level" : "3",
+                "section": "Tools",
+                "id" : "6"
+            },
+
+            {
+                "name" : "Trello",
+                "level" : "2",
+                "section": "Tools",
+                "id" : "12"
             },
             {
                 "name" : "Photofiltre",
                 "level" : "1",
-                "section": "Communication"
+                "section": "Communication",
+                "id" : "20"
             },
             {
                 "name" : "Windows Movie Maker",
                 "level" : "1",
-                "section": "Communication"
+                "section": "Communication",
+                "id" : "21"
             },
             {
                 "name" : "InDesign",
                 "level" : "1",
-                "section": "Communication"
+                "section": "Communication",
+                "id" : "22"
             }        
         ]
     }
