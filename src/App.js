@@ -8,6 +8,7 @@ import {
 import WelcomingPage from './Main/WelcomingPage/WelcomingPage';
 import SelectionCharacterPage from './Main/SelectionCharacterPage/SelectionCharacterPage';
 import ResumePage from './Main/ResumePage/ResumePage';
+import GamePage from './Main/GamePage/GamePage';
 
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path="/resume/:persoid/:pseudo">
             <ResumePage/>
+          </Route>
+          <Route path="/game/:persoid/:pseudo">
+            <GamePage/>
           </Route>
         </Switch>
       </div>
