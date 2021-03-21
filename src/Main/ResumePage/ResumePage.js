@@ -17,7 +17,6 @@ class ResumePage extends React.Component {
         this.state = {
             menuTitles :[{title:"Presentation", num:1}, {title:"Professionnal",num:2}, {title:"Formation",num:3}, {title:"Compétences",num:4}, {title:"Contact",num:5}],
             selectedSectionMenu : 0,
-            menu : true,
             selectedTitle : " "
         }
         this.selectedCharacter= {}    
@@ -61,19 +60,18 @@ class ResumePage extends React.Component {
     displayTitle(selectedNum){
         return ( 
             <div >
-            {this.state.menuTitles.map((title) => {
-                return (
-                    <div key={title.num}  onClick={()=>this.openMenuSection(title)}>
-                    <MenuTitleComponent  title={title} selectedTitle={selectedNum} />
-                    </div>
-                 )
-            })}
+                {this.state.menuTitles.map((title) => {
+                    return (
+                        <div key={title.num}  onClick={()=>this.openMenuSection(title)}>
+                        <MenuTitleComponent  title={title} selectedTitle={selectedNum} />
+                        </div>
+                    )
+                })}
             </div>
         )
     }
 
     openMenuSection(title){
-        this.setState(state => ({ menu : false}))
         this.setState(state => ({ selectedTitle : title.title}))
     }
 
@@ -90,69 +88,20 @@ class ResumePage extends React.Component {
     render(){
         let params = this.props.match.params
         this.selectedCharacter = Datas.find(character => character.id == this.props.match.params.persoid);
-        switch (this.state.selectedTitle) {
-            case "Presentation":
-                return ( 
-                    <div className="resume-page" id="resume">
-                        <div className="menu-container">
-                            <PresentationComponent/>
-                        </div>
-                        <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
-                    </div>
-                )
-                break;
-            case "Formation":
-                return(
-                    <div className="resume-page" id="resume">
-                        <div className="menu-container">
-                            <EducationComponent/>
-                        </div>
-                        <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
-                    </div>
-                )
-                break;
-            case "Professionnal":
-                return(
-                    <div className="resume-page" id="resume">
-                        <div className="menu-container">
-                            <ProfessionnalComponent/>
-                        </div>
-                        <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
-                    </div>
-                )
-                break;
-            case "Compétences":
-                return(
-                    <div className="resume-page" id="resume">
-                        <div className="menu-container">
-                            <SkillsComponent/>
-                        </div>
-                        <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
-                    </div>
-                )
-                break;
-            case "Contact":
-                    return(
-                        <div className="resume-page" id="resume">
-                            <div className="menu-container">
-                                <ContactComponent/>
-                            </div>
-                            <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
-                        </div>
-                    )
-                    break;
-            default:
-                return (
-                    <div className="resume-page" id="resume">
-                        <div className="menu-container">
-                            {this.displayTitle(this.state.selectedSectionMenu)}
-                        </div>
-                        <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
-                    </div>
-                )
-                break;
-        }
-    }    
+        return ( 
+            <div className="resume-page" id="resume">
+                <div className="menu-container">
+                    {this.state.selectedTitle === "Presentation" ? <PresentationComponent/> : null }
+                    {this.state.selectedTitle === "Formation" ?  <EducationComponent/> : null }
+                    {this.state.selectedTitle === "Professionnal" ? <ProfessionnalComponent/> : null }
+                    {this.state.selectedTitle === "Compétences" ? <SkillsComponent/> : null }
+                    {this.state.selectedTitle === "Contact" ? <ContactComponent/> : null }
+                    {this.state.selectedTitle === " " ? this.displayTitle(this.state.selectedSectionMenu) : null }
+                </div>
+                <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
+            </div>
+        )
+    }   
 }
 
 export default withRouter(ResumePage)
