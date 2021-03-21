@@ -9,6 +9,7 @@ import PresentationComponent from "../commonComponent/MenuComponent/Presentation
 import EducationComponent from "../commonComponent/MenuComponent/EducationComponent/EducationComponent";
 import ProfessionnalComponent from "../commonComponent/MenuComponent/ProfessionnalComponent/ProfessionnalComponent";
 import SkillsComponent from "../commonComponent/MenuComponent/SkillsComponent/SkillsComponent";
+import ContactComponent from "../commonComponent/MenuComponent/ContactComponent/ContactComponent";
 
 class ResumePage extends React.Component {
     constructor(props){
@@ -108,36 +109,36 @@ class ResumePage extends React.Component {
                     </div>
                 )
                 break;
-                case "Professionnal":
+            case "Professionnal":
+                return(
+                    <div className="resume-page" id="resume">
+                        <div className="menu-container">
+                            <ProfessionnalComponent/>
+                        </div>
+                        <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
+                    </div>
+                )
+                break;
+            case "Compétences":
+                return(
+                    <div className="resume-page" id="resume">
+                        <div className="menu-container">
+                            <SkillsComponent/>
+                        </div>
+                        <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
+                    </div>
+                )
+                break;
+            case "Contact":
                     return(
                         <div className="resume-page" id="resume">
                             <div className="menu-container">
-                                <ProfessionnalComponent/>
+                                <ContactComponent/>
                             </div>
                             <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
                         </div>
                     )
                     break;
-                                    case "Professionnal":
-                    return(
-                        <div className="resume-page" id="resume">
-                            <div className="menu-container">
-                                <ProfessionnalComponent/>
-                            </div>
-                            <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
-                        </div>
-                    )
-                    break;
-                    case "Compétences":
-                        return(
-                            <div className="resume-page" id="resume">
-                                <div className="menu-container">
-                                    <SkillsComponent/>
-                                </div>
-                                <SmallSelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
-                            </div>
-                        )
-                        break;
             default:
                 return (
                     <div className="resume-page" id="resume">
