@@ -1,0 +1,41 @@
+.small-size-character{
+    width: 20vw;
+    margin-top: 68vh;
+    position: absolute;
+}
+
+.position-first{
+    margin-left: 2vw;
+}
+
+.position-second{
+    margin-left: 12vw;
+}
+
+.position-third{
+    margin-left: 22vw;
+}
+
+.position-fourth{
+    margin-left: 32vw;
+}
+
+.position-fifth{
+    margin-left: 42vw;
+}
+
+.position-sixth{
+    margin-left: 52vw;
+}
+
+.position-seventh{
+    margin-left: 62vw;
+}
+
+.position-eigth{
+    margin-left: 72vw;
+}
+
+.position-nineth{
+    margin-left: 80vw;
+}

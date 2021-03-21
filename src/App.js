@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import WelcomingPage from './Main/WelcomingPage/WelcomingPage';
 import SelectionCharacterPage from './Main/SelectionCharacterPage/SelectionCharacterPage';
+import ResumePage from './Main/ResumePage/ResumePage';
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/welcome/:persoid/:pseudo">
             <WelcomingPage/>
+          </Route>
+          <Route path="/resume/:persoid/:pseudo">
+            <ResumePage/>
           </Route>
         </Switch>
       </div>

@@ -1,13 +1,17 @@
 import React from "react";
 import "./welcomingPage.css";
 import Typed from 'typed.js';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import Datas from '../../datas';
-
+import SelectedCharacterComponent from '../commonComponent/SelectedCharacterComponent/SelectedCharacterComponent';
 class WelcomingPage extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+            completed: false
+        }
         this.selectedCharacter= {}
+        this.to = ""
     }
 
     componentDidMount(){
@@ -22,19 +26,37 @@ class WelcomingPage extends React.Component {
             typeSpeed: 50
         });
     }
-    
-    render(){    
+
+    displayPage = () => {
         let params = this.props.match.params
         this.selectedCharacter = Datas.find(character => character.id == this.props.match.params.persoid);
-        return (
-            <div className="welcoming-page">
-                <div className="welcoming-text-wrapper">
-                    <p id="welcomingTextFirstSetion" className="welcoming-text"></p>
-                </div>
-                <img src={this.selectedCharacter.fullimg} className="fullsize-character" />
-            </div>
-        )      
         
+            return (
+                <div className="welcoming-page" onClick={this.openResumeDetails}>
+                    <div className="welcoming-text-wrapper">
+                        <p id="welcomingTextFirstSetion" className="welcoming-text"></p>
+                    </div>
+                    <SelectedCharacterComponent selectedCharacter={this.selectedCharacter}/>
+                </div>
+            )        
+    }
+    
+    openResumeDetails = () => {
+        this.setState(state => ({ completed: true})); 
+        let str1 = "/resume"
+        this.to = str1.concat('/',this.props.match.params.persoid,'/', this.props.match.params.pseudo)        
+    }
+
+
+    render(){  
+        if(!this.state.completed){
+            return(
+                this.displayPage()
+            )         
+        } 
+        else {
+            return <Redirect to={this.to} />
+        }
     }
 }
     

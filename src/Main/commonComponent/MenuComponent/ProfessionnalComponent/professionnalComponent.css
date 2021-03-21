@@ -1,0 +1,29 @@
+.professionnal-container{
+    overflow: overlay;
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.professionnal-case{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.professionnal-title{
+    font-family: SuperMario, sans-serif;
+    font-size: 3vh;
+}
+
+.professionnal-subtitle{
+    font-family: SuperMario, sans-serif;
+    font-size: 3vh;
+    margin: 1vh;
+}
+
+.professionnal-text{
+    margin: 0.5vh;
+}
